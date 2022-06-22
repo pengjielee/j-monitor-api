@@ -1,9 +1,9 @@
-const mongoose = require('./mongoose');
+const mongoose = require("./mongoose");
 
 const logSchema = new mongoose.Schema({
-  name: String
+  name: String,
 });
 
-const logModel = mongoose.model('Log', logSchema);
+const logModel = mongoose.model("Log", logSchema);
 
 module.exports = logModel;

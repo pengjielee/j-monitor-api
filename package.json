@@ -1,5 +1,5 @@
 {
-  "name": "j-monitor",
+  "name": "j-monitor-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,5 +12,8 @@
   "dependencies": {
     "express": "^4.18.1",
     "mongoose": "^6.4.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
   }
 }
