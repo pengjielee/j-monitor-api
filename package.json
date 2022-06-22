@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "pt": "prettier --write src"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +16,7 @@
     "mongoose": "^6.4.0"
   },
   "devDependencies": {
+    "cors": "^2.8.5",
     "prettier": "^2.7.1"
   }
 }
