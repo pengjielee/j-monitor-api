@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 const Log = require("./db/log");
@@ -9,6 +10,12 @@ app.use(
     origin: "*",
   })
 );
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 
 app.get("/hello", (req, res) => {
   res.send("Hello World!");
@@ -30,8 +37,8 @@ app.get("/api/log/list", async (req, res) => {
   }
 });
 
-app.get("/api/log/add", async (req, res) => {
-  const { app = "", env = "test", url = "", type = "", message = "", date = Date.now(), api = "" } = req.query;
+app.post("/api/log/add", async (req, res) => {
+  const { app = "", env = "test", url = "", type = "", message = "", date = Date.now(), api = "" } = req.body;
   const log = new Log();
   log.app = app;
   log.env = env;
